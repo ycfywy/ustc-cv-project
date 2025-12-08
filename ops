@@ -1,0 +1,32 @@
+pip uninstall torch torchvision torchaudio -y
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+
+这是一个基于CNN-LSTM的台风轨迹预测项目
+使用conda切换到typoon环境
+阅读这个代码的train部分 inference部分，你需要做一下几个事情：
+1. 新增一个train code，把模型的lstm模块替换为transformer block。
+2. 新增一个test代码，比较transformer block和lstm模块的预测效果
+3. 参考inference中的代码，绘制轨迹预测图展示
+
+
+
+现在需要做这样几件事情：1. 运行训练lstm 和 transformer的代码，训练一下完整的新的参数。 
+2. 修改绘制带有地图的图像的代码，遍历所有的台风，比对lstm和transformer的轨迹 并把结果放在一个文件夹里面。 
+3. 修改 从mse损失的角度数值角度对比两个模型， 运行测试代码 要求你把结果也放在一个文件夹里面
+
+conda activate typoon
+cd train
+python train.py
+python test_trajectory_plot.py
+python test_mse_comparison.py
+
+
+我看到trajectory的图片中，有的strom你只画了6个point，这个是为什么。
+请检查一下代码，我要求要预测所有的点，而且还要比原始数据多出一个length
+暂且定为10
+
+另外，我不仅仅需要mse compare的csv结果，我还要求你用多样的方法
+把数据给可视化。不过要注意 一下子画很多个Storm的mse好像有点多
+你可以设置一个参数，只绘制那种点数比较多的storm 通过柱状图比对loss
+还有别的一些比较优雅的展示方法 你都可以做
