@@ -1,4 +1,4 @@
-# Typhoon-Trajectory-Prediction-Based-On-CNN-LSTM-model
+# Typhoon-Trajectory-Prediction
 This repository is the final project for the course STATS402
 ## Environment Setting
 ```
