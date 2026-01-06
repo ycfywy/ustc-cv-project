@@ -1,5 +1,4 @@
 # Typhoon-Trajectory-Prediction
-This repository is the final project for the course STATS402
 ## Environment Setting
 ```
 conda create -n typoon python=3.10
